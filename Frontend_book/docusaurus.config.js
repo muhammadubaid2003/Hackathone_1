@@ -4,8 +4,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
-  title: 'ROS 2 Nervous System',
-  tagline: 'Understanding ROS 2 as the core nervous system of humanoid robots',
+  title: 'Physical AI & Humanoid Robotics Textbook',
+  tagline: 'Comprehensive Guide to Physical AI & Humanoid Robotics',
   url: 'https://hackathone-1-ashy.vercel.app/',
   baseUrl: '/',
   onBrokenLinks: 'warn', // Change to warn to allow build to complete
@@ -39,15 +39,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'ROS 2 Nervous System',
+        title: 'Physical AI & Humanoid Robotics Textbook',
         logo: {
-          alt: 'ROS 2 Nervous System Logo',
+          alt: 'Physical AI & Humanoid Robotics Textbook Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            to: '/blog',
-            label: 'Blog',
+            to: '/docs/modules/ros2-nervous-system/introduction',
+            label: 'Textbook',
             position: 'left',
           },
           {
@@ -82,7 +82,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             title: 'Resources',
             items: [
               {
-                label: 'Documentation',
+                label: 'Textbook',
                 to: '/docs/modules/vla-integration/introduction',
               },
               {
@@ -92,7 +92,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ROS 2 Nervous System Book. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

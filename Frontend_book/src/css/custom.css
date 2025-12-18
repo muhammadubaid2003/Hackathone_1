@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  /* Color Palette - Modern, professional look */
   --ifm-color-primary: #2563eb; /* Changed to a blue tone more appropriate for tech/robotics */
   --ifm-color-primary-dark: #1d4ed8;
   --ifm-color-primary-darker: #1a47c5;
@@ -13,12 +14,774 @@
   --ifm-color-primary-light: #3b82f6;
   --ifm-color-primary-lighter: #60a5fa;
   --ifm-color-primary-lightest: #93c5fd;
-  --ifm-code-font-size: 95%;
+  --ifm-color-secondary: #64748b; /* Gray for secondary elements */
+  --ifm-color-success: #10b981; /* Green for success/positive elements */
+  --ifm-color-info: #0ea5e9; /* Blue for info elements */
+  --ifm-color-warning: #f59e0b; /* Yellow for warnings */
+  --ifm-color-danger: #ef4444; /* Red for errors */
 
   /* Additional custom variables for ROS 2 book */
   --ros2-color-accent: #ff6b35; /* Orange accent for robotics theme */
   --ros2-color-secondary: #10b981; /* Green for success/positive elements */
   --ros2-color-warning: #f59e0b; /* Yellow for warnings */
+
+  /* Typography Scale - Modern, readable hierarchy */
+  --ifm-font-size-xs: 0.75rem;   /* 12px */
+  --ifm-font-size-sm: 0.875rem;  /* 14px */
+  --ifm-font-size-base: 1rem;    /* 16px */
+  --ifm-font-size-lg: 1.125rem;  /* 18px */
+  --ifm-font-size-xl: 1.25rem;   /* 20px */
+  --ifm-font-size-2xl: 1.5rem;   /* 24px */
+  --ifm-font-size-3xl: 1.875rem; /* 30px */
+  --ifm-font-size-4xl: 2.25rem;  /* 36px */
+  --ifm-font-size-5xl: 3rem;     /* 48px */
+  --ifm-font-size-6xl: 3.75rem;  /* 60px */
+
+  /* Typography Properties */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-line-height-base: 1.6;
+  --ifm-line-height-tight: 1.25;
+  --ifm-line-height-condensed: 1.4;
+
+  /* Spacing Scale - Consistent, harmonious spacing */
+  --ifm-spacing-xs: 0.5rem;      /* 8px */
+  --ifm-spacing-sm: 0.75rem;     /* 12px */
+  --ifm-spacing-md: 1rem;        /* 16px */
+  --ifm-spacing-lg: 1.5rem;      /* 24px */
+  --ifm-spacing-xl: 2rem;        /* 32px */
+  --ifm-spacing-2xl: 2.5rem;     /* 40px */
+  --ifm-spacing-3xl: 3rem;       /* 48px */
+  --ifm-spacing-4xl: 4rem;       /* 64px */
+  --ifm-spacing-5xl: 5rem;       /* 80px */
+  --ifm-spacing-6xl: 6rem;       /* 96px */
+
+  /* Content Width Constraints */
+  --ifm-container-width: 1200px;
+  --ifm-container-width-xl: 1400px;
+
+  /* Responsive Breakpoints */
+  --ifm-breakpoint-xs: 320px;
+  --ifm-breakpoint-sm: 576px;
+  --ifm-breakpoint-md: 768px;
+  --ifm-breakpoint-lg: 992px;
+  --ifm-breakpoint-xl: 1200px;
+  --ifm-breakpoint-xxl: 1400px;
+
+  /* Code font size */
+  --ifm-code-font-size: 95%;
+}
+
+/* Base Typography Classes */
+.markdown h1 {
+  font-size: var(--ifm-font-size-4xl);
+  line-height: var(--ifm-line-height-tight);
+  margin-bottom: var(--ifm-spacing-lg);
+  font-weight: 700;
+}
+
+.markdown h2 {
+  font-size: var(--ifm-font-size-3xl);
+  line-height: var(--ifm-line-height-tight);
+  margin-bottom: var(--ifm-spacing-md);
+  font-weight: 600;
+  padding-top: var(--ifm-spacing-xl);
+}
+
+.markdown h3 {
+  font-size: var(--ifm-font-size-2xl);
+  line-height: var(--ifm-line-height-condensed);
+  margin-bottom: var(--ifm-spacing-md);
+  font-weight: 600;
+  padding-top: var(--ifm-spacing-lg);
+}
+
+.markdown h4 {
+  font-size: var(--ifm-font-size-xl);
+  line-height: var(--ifm-line-height-base);
+  margin-bottom: var(--ifm-spacing-md);
+  font-weight: 600;
+}
+
+.markdown h5 {
+  font-size: var(--ifm-font-size-lg);
+  line-height: var(--ifm-line-height-base);
+  margin-bottom: var(--ifm-spacing-sm);
+  font-weight: 500;
+}
+
+.markdown h6 {
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+  margin-bottom: var(--ifm-spacing-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.markdown p {
+  font-size: var(--ifm-font-size-lg);
+  line-height: var(--ifm-line-height-base);
+  margin-bottom: var(--ifm-spacing-lg);
+  color: var(--ifm-font-color-base);
+  max-width: 65ch; /* Optimal line length for readability */
+}
+
+/* Enhanced typography for better readability */
+.markdown {
+  font-family: var(--ifm-font-family-base);
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+  color: var(--ifm-font-color-base);
+}
+
+/* Enhanced code block styling for better readability */
+.code-block {
+  font-size: var(--ifm-code-font-size);
+  line-height: var(--ifm-line-height-condensed);
+  border-radius: var(--ifm-global-radius);
+  margin: var(--ifm-spacing-md) 0;
+  padding: var(--ifm-pre-padding);
+  background-color: var(--ifm-code-background);
+  color: var(--ifm-code-color);
+  overflow-x: auto;
+}
+
+/* Blockquote styling for better readability */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  margin: var(--ifm-spacing-lg) 0;
+  padding: var(--ifm-spacing-md) var(--ifm-spacing-lg);
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-800);
+  font-style: italic;
+}
+
+/* Enhanced table styling for better readability */
+.markdown table {
+  border-collapse: collapse;
+  margin: var(--ifm-spacing-lg) 0;
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  text-align: left;
+}
+
+.markdown table th {
+  background-color: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+}
+
+/* Enhanced link styling for better readability */
+.markdown a {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration-thickness: 2px;
+}
+
+/* Enhanced emphasis styling */
+.markdown strong {
+  font-weight: 600;
+}
+
+.markdown em {
+  font-style: italic;
+}
+
+.markdown strong em {
+  font-weight: 700;
+}
+
+/* Responsive typography that scales appropriately for each screen size */
+@media (max-width: 576px) {
+  /* Extra small devices (phones, 576px and down) */
+  .markdown h1 {
+    font-size: var(--ifm-font-size-3xl);
+    line-height: var(--ifm-line-height-tight);
+  }
+
+  .markdown h2 {
+    font-size: var(--ifm-font-size-2xl);
+    line-height: var(--ifm-line-height-condensed);
+  }
+
+  .markdown h3 {
+    font-size: var(--ifm-font-size-xl);
+    line-height: var(--ifm-line-height-base);
+  }
+
+  .markdown h4 {
+    font-size: var(--ifm-font-size-lg);
+    line-height: var(--ifm-line-height-base);
+  }
+
+  .markdown p {
+    font-size: var(--ifm-font-size-base);
+    line-height: var(--ifm-line-height-base);
+    margin-bottom: var(--ifm-spacing-md);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Small devices (landscape phones, 577px to 768px) */
+  .markdown h1 {
+    font-size: calc(var(--ifm-font-size-3xl) * 1.1);
+  }
+
+  .markdown h2 {
+    font-size: calc(var(--ifm-font-size-2xl) * 1.1);
+  }
+
+  .markdown p {
+    font-size: var(--ifm-font-size-lg);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Medium devices (tablets, 769px to 992px) */
+  .markdown h1 {
+    font-size: calc(var(--ifm-font-size-3xl) * 1.2);
+  }
+
+  .markdown h2 {
+    font-size: calc(var(--ifm-font-size-2xl) * 1.15);
+  }
+
+  .markdown p {
+    font-size: var(--ifm-font-size-lg);
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  /* Large devices (desktops, 993px to 1200px) */
+  .markdown h1 {
+    font-size: var(--ifm-font-size-4xl);
+  }
+
+  .markdown h2 {
+    font-size: var(--ifm-font-size-3xl);
+  }
+
+  .markdown p {
+    font-size: var(--ifm-font-size-lg);
+  }
+}
+
+@media (min-width: 1201px) {
+  /* Extra large devices (large desktops, 1201px and up) */
+  .markdown h1 {
+    font-size: var(--ifm-font-size-4xl);
+  }
+
+  .markdown h2 {
+    font-size: var(--ifm-font-size-3xl);
+  }
+
+  .markdown p {
+    font-size: var(--ifm-font-size-lg);
+    max-width: 70ch; /* Slightly wider for larger screens but still readable */
+  }
+}
+
+/* WCAG 2.1 AA compliant color contrast enhancements */
+.markdown {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.markdown a {
+  color: var(--ifm-color-primary);
+}
+
+.markdown a:hover {
+  color: var(--ifm-color-primary-darker);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* Ensure sufficient contrast for code blocks */
+.code-block {
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-900);
+}
+
+html[data-theme='dark'] .code-block {
+  background-color: var(--ifm-color-emphasis-700);
+  color: var(--ifm-color-emphasis-100);
+}
+
+/* Contrast enhancements for different themes */
+html[data-theme='dark'] {
+  --ifm-color-emphasis-800: #e2e8f0; /* Lighter gray for dark mode */
+  --ifm-color-emphasis-900: #f8fafc; /* Lightest gray for dark mode */
+}
+
+html[data-theme='light'] {
+  --ifm-color-emphasis-800: #1e293b; /* Darker gray for light mode */
+  --ifm-color-emphasis-900: #0f172a; /* Darkest gray for light mode */
+}
+
+/* Modern sidebar styling with clear visual hierarchy */
+.menu {
+  padding: var(--ifm-spacing-md);
+}
+
+.menu__list {
+  margin: 0;
+}
+
+.menu__list-item {
+  margin-bottom: var(--ifm-spacing-xs);
+  border-radius: var(--ifm-global-radius);
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 0;
+}
+
+.menu__list-item-collapsible {
+  border-radius: var(--ifm-global-radius);
+  margin-bottom: var(--ifm-spacing-xs);
+  padding: var(--ifm-spacing-sm);
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: var(--ifm-menu-color-background-hover);
+}
+
+.menu__link {
+  border-radius: var(--ifm-global-radius);
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md);
+  margin: var(--ifm-spacing-xs) 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-menu-color-background-hover);
+  text-decoration: none;
+}
+
+.menu__link--active,
+.menu__link--active:hover {
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  border-left: 3px solid var(--ifm-color-primary);
+}
+
+/* Collapsible sections for better organization */
+.menu__list-item-collapsible .menu__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__list-item-collapsible .menu__caret {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu__list-item-collapsible .menu__caret:before {
+  content: "▸";
+  margin-left: var(--ifm-spacing-md);
+}
+
+.menu__list-item-collapsible:not(.menu__list-item-collapsible--expanded) .menu__caret:before {
+  content: "▸";
+}
+
+.menu__list-item-collapsible.menu__list-item-collapsible--expanded .menu__caret:before {
+  content: "▾";
+  transform: rotate(90deg);
+}
+
+/* Clear visual indicators for active/visited navigation items */
+.menu__link--active {
+  background-color: var(--ifm-color-emphasis-100);
+  border-left: 3px solid var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Modern top navigation bar styling */
+.navbar {
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: var(--ifm-spacing-sm) 0;
+}
+
+.navbar__inner {
+  max-width: var(--ifm-container-width-xl);
+  margin: 0 auto;
+  padding: 0 var(--ifm-spacing-md);
+}
+
+.navbar__brand {
+  margin-right: var(--ifm-spacing-lg);
+}
+
+.navbar__item {
+  margin: 0 var(--ifm-spacing-xs);
+}
+
+.navbar__link {
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md);
+  border-radius: var(--ifm-global-radius);
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+.navbar__link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+}
+
+.navbar__link--active {
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Mobile-friendly navigation menu */
+.navbar-sidebar {
+  background-color: var(--ifm-background-surface-color);
+}
+
+.navbar-sidebar__brand {
+  padding: var(--ifm-spacing-md);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.navbar-sidebar__items {
+  padding: var(--ifm-spacing-md);
+}
+
+.navbar-sidebar__item {
+  margin: var(--ifm-spacing-xs) 0;
+}
+
+/* Navigation search styling */
+.navbar__search {
+  margin-left: var(--ifm-spacing-lg);
+}
+
+/* Breadcrumb navigation styling */
+.breadcrumb {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: var(--ifm-global-radius);
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md);
+  margin-bottom: var(--ifm-spacing-lg);
+}
+
+.breadcrumb__item {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.breadcrumb__item--active {
+  color: var(--ifm-color-emphasis-900);
+  font-weight: 600;
+}
+
+.breadcrumb__item:not(:last-child):after {
+  content: "»";
+  margin: 0 var(--ifm-spacing-sm);
+  color: var(--ifm-color-emphasis-400);
+}
+
+/* Consistent styling for buttons and interactive elements */
+.button {
+  border-radius: var(--ifm-global-radius);
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-lg);
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.button--secondary {
+  background-color: var(--ifm-color-secondary);
+  color: white;
+}
+
+.button--secondary:hover {
+  background-color: var(--ifm-color-emphasis-700);
+}
+
+.button--success {
+  background-color: var(--ifm-color-success);
+  color: white;
+}
+
+.button--success:hover {
+  background-color: #0da271;
+}
+
+.button--outline {
+  background-color: transparent;
+  border: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.button--outline:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+/* Footer styling that matches new design language */
+.footer {
+  background-color: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding: var(--ifm-spacing-xl) 0 var(--ifm-spacing-lg);
+  margin-top: var(--ifm-spacing-xl);
+}
+
+.footer__title {
+  font-size: var(--ifm-font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--ifm-spacing-md);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.footer__items {
+  margin-bottom: var(--ifm-spacing-md);
+}
+
+.footer__link {
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+  display: block;
+  margin-bottom: var(--ifm-spacing-xs);
+}
+
+.footer__link:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+}
+
+.footer--dark {
+  background-color: var(--ifm-color-emphasis-900);
+  color: var(--ifm-color-emphasis-100);
+}
+
+.footer--dark .footer__title {
+  color: var(--ifm-color-emphasis-100);
+}
+
+.footer--dark .footer__link {
+  color: var(--ifm-color-emphasis-300);
+}
+
+.footer--dark .footer__link:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* Subtle visual enhancements (shadows, transitions) for modern feel */
+.card {
+  border-radius: calc(var(--ifm-global-radius) * 1.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Enhanced code block styling with modern design */
+.code-block {
+  border-radius: calc(var(--ifm-global-radius) * 1.5);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  position: relative;
+}
+
+/* Subtle animations for interactive elements */
+.anim-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.anim-slide-up {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced table styling with modern design */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--ifm-global-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Consistent styling across all design elements */
+:root {
+  --ifm-global-radius: 8px;
+  --ifm-transition-fast: 0.2s;
+  --ifm-transition-medium: 0.3s;
+  --ifm-transition-slow: 0.5s;
+}
+
+.markdown ul,
+.markdown ol {
+  margin: var(--ifm-spacing-md) 0;
+  padding-left: var(--ifm-spacing-xl);
+}
+
+.markdown li {
+  margin-bottom: var(--ifm-spacing-sm);
+  line-height: var(--ifm-line-height-base);
+}
+
+/* Content Width Constraints */
+.main-wrapper {
+  max-width: var(--ifm-container-width) !important;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: var(--ifm-container-width-xl);
+  margin: 0 auto;
+}
+
+/* Content wrapper for documentation pages */
+.doc-wrapper {
+  max-width: var(--ifm-container-width-xl);
+  margin: 0 auto;
+  padding: 0 var(--ifm-spacing-lg);
+}
+
+/* Accessibility-focused CSS classes */
+.accessible-focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.high-contrast-text {
+  color: var(--ifm-color-emphasis-900);
+}
+
+.screen-reader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focusable {
+  outline: 0;
+}
+
+.focusable:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.contrast-enhanced h1,
+.contrast-enhanced h2,
+.contrast-enhanced h3,
+.contrast-enhanced h4,
+.contrast-enhanced h5,
+.contrast-enhanced h6 {
+  color: var(--ifm-color-emphasis-900);
+}
+
+.contrast-enhanced p {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.contrast-enhanced a {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+}
+
+.contrast-enhanced a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* Ensure sufficient color contrast for accessibility */
+:root {
+  --ifm-color-emphasis-0: var(--ifm-color-gray-0);
+  --ifm-color-emphasis-100: var(--ifm-color-gray-100);
+  --ifm-color-emphasis-200: var(--ifm-color-gray-200);
+  --ifm-color-emphasis-300: var(--ifm-color-gray-300);
+  --ifm-color-emphasis-400: var(--ifm-color-gray-400);
+  --ifm-color-emphasis-500: var(--ifm-color-gray-500);
+  --ifm-color-emphasis-600: var(--ifm-color-gray-600);
+  --ifm-color-emphasis-700: var(--ifm-color-gray-700);
+  --ifm-color-emphasis-800: var(--ifm-color-gray-800);
+  --ifm-color-emphasis-900: var(--ifm-color-gray-900);
+  --ifm-color-emphasis-1000: var(--ifm-color-gray-1000);
 }
 
 /* Custom styling for code blocks to make them more readable for technical content */

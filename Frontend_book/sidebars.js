@@ -14,7 +14,7 @@ module.exports = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'ROS 2 Nervous System',
+      label: 'Physical AI Fundamentals',
       items: [
         'modules/ros2-nervous-system/ros2-nervous-system-overview',
         'modules/ros2-nervous-system/introduction',
@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Digital Twin (Gazebo & Unity)',
+      label: 'Digital Twin Technologies',
       items: [
         'modules/digital-twin/introduction',
         'modules/digital-twin/physics-simulation-gazebo',
@@ -38,7 +38,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'AI-Robot Brain (NVIDIA Isaac)',
+      label: 'AI & Robotics Intelligence',
       items: [
         'modules/ai-robot-brain/introduction',
         'modules/ai-robot-brain/isaac-sim-synthetic-data',
@@ -50,7 +50,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Vision-Language-Action (VLA) Integration',
+      label: 'Multimodal AI Systems',
       items: [
         'modules/vla-integration/introduction',
         'modules/vla-integration/voice-to-action-pipelines',
