@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 (module.exports = {
   title: 'ROS 2 Nervous System',
   tagline: 'Understanding ROS 2 as the core nervous system of humanoid robots',
-  url: 'https://your-ros2-book-site.com',
+  url: 'https://hackathone-1-ashy.vercel.app/',
   baseUrl: '/',
   onBrokenLinks: 'warn', // Change to warn to allow build to complete
   onBrokenMarkdownLinks: 'warn',
