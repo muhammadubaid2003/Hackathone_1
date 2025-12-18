@@ -79,58 +79,85 @@
   font-weight: 600;
 }
 
-.tocSection {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.coverageSection {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
   padding: 5rem 0;
-  color: white;
+  color: #2d3748;
 }
 
-.tocSection h2 {
-  color: white;
+.coverageSection h2 {
+  color: #2d3748;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
-.tocSection h2:after {
-  background: rgba(255, 255, 255, 0.3);
+.coverageSection h2:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
 }
 
-.tocList {
+.coverageSection h3 {
+  color: #1a365d;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.coverageSection h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.coverageList {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.tocList li {
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 1rem;
-  transition: all 0.3s ease;
-  border-left: 3px solid transparent;
-  padding-left: 1rem;
-}
-
-.tocList li:hover {
-  border-left: 3px solid rgba(255, 255, 255, 0.6);
+.coverageList li {
+  padding: 0.75rem 0;
   padding-left: 1.5rem;
-}
-
-.tocList li:last-child {
-  border-bottom: none;
-}
-
-.tocList a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: block;
+  position: relative;
+  color: #4a5568;
   font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.tocList a:hover {
-  color: white;
-  text-decoration: none;
-  transform: translateX(5px);
+.coverageList li:before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-size: 0.8rem;
+  top: 0.7rem;
+}
+
+.applicationBox {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.applicationBox p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+  line-height: 1.7;
 }
 
 .chapterCard {
