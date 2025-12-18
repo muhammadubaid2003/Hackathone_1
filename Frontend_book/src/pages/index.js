@@ -74,30 +74,40 @@ function ChapterOverview() {
   );
 }
 
-// Textbook Table of Contents component
-function TableOfContents() {
+// What this textbook covers component
+function TextbookCoverage() {
   return (
-    <section className={clsx(styles.features, styles.tocSection)}>
+    <section className={clsx(styles.features, styles.coverageSection)}>
       <div className="container">
-        <h2 className="text--center">Table of Contents</h2>
+        <h2>What this Textbook Covers</h2>
         <div className="row">
           <div className="col col--6">
-            <ul className={styles.tocList}>
-              <li><Link to="/docs/modules/ros2-nervous-system/introduction">Chapter 1: Physical AI Fundamentals</Link></li>
-              <li><Link to="/docs/modules/ros2-nervous-system/python-agents">Chapter 2: Python Agents for Robotics</Link></li>
-              <li><Link to="/docs/modules/ros2-nervous-system/urdf-modeling">Chapter 3: URDF Modeling</Link></li>
-              <li><Link to="/docs/modules/digital-twin/introduction">Chapter 4: Digital Twin Technologies</Link></li>
-              <li><Link to="/docs/modules/digital-twin/physics-simulation-gazebo">Chapter 5: Physics Simulation in Gazebo</Link></li>
+            <h3>Core Concepts & Technologies</h3>
+            <ul className={styles.coverageList}>
+              <li>Physical AI Fundamentals and ROS 2 architecture</li>
+              <li>Python agents for robotics applications</li>
+              <li>URDF modeling for robot design</li>
+              <li>Digital twin technologies with Gazebo and Unity</li>
+              <li>Physics simulation and sensor modeling</li>
             </ul>
           </div>
           <div className="col col--6">
-            <ul className={styles.tocList}>
-              <li><Link to="/docs/modules/ai-robot-brain/introduction">Chapter 6: AI & Robotics Intelligence</Link></li>
-              <li><Link to="/docs/modules/ai-robot-brain/isaac-sim-synthetic-data">Chapter 7: Isaac Sim & Synthetic Data</Link></li>
-              <li><Link to="/docs/modules/ai-robot-brain/isaac-ros-vslam">Chapter 8: Visual SLAM</Link></li>
-              <li><Link to="/docs/modules/vla-integration/introduction">Chapter 9: Multimodal AI Systems</Link></li>
-              <li><Link to="/docs/modules/vla-integration/cognitive-planning-llms">Chapter 10: Cognitive Planning with LLMs</Link></li>
+            <h3>Advanced AI & Robotics</h3>
+            <ul className={styles.coverageList}>
+              <li>AI-powered robot brain with NVIDIA Isaac</li>
+              <li>Synthetic data generation techniques</li>
+              <li>Visual SLAM for navigation</li>
+              <li>Humanoid navigation systems</li>
+              <li>Vision-Language-Action integration</li>
             </ul>
+          </div>
+        </div>
+        <div className="row" style={{marginTop: '2rem'}}>
+          <div className="col col--12">
+            <h3>Practical Applications</h3>
+            <div className={styles.applicationBox}>
+              <p>This textbook provides hands-on guidance for building intelligent humanoid robots, from fundamental concepts to advanced multimodal AI systems. You'll learn to integrate cutting-edge technologies for real-world robotics applications.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +124,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <ChapterOverview />
-        <TableOfContents />
+        <TextbookCoverage />
       </main>
     </Layout>
   );
