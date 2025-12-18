@@ -1,0 +1,102 @@
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
+// With JSDoc @type annotations, IDEs can provide config autocompletion
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
+(module.exports = {
+  title: 'ROS 2 Nervous System',
+  tagline: 'Understanding ROS 2 as the core nervous system of humanoid robots',
+  url: 'https://your-ros2-book-site.com',
+  baseUrl: '/',
+  onBrokenLinks: 'warn', // Change to warn to allow build to complete
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.ico',
+  organizationName: 'your-org', // Usually your GitHub org/user name.
+  projectName: 'ros2-nervous-system-book', // Usually your repo name.
+
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          // Please change this to your repo.
+          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+        },
+        blog: {
+          path: 'blog',
+          routeBasePath: 'blog',
+        }, // Enable blog feature
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      }),
+    ],
+  ],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      navbar: {
+        title: 'ROS 2 Nervous System',
+        logo: {
+          alt: 'ROS 2 Nervous System Logo',
+          src: 'img/logo.svg',
+        },
+        items: [
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left',
+          },
+          {
+            href: 'https://github.com/your-org/ros2-nervous-system-book',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Blog',
+            items: [
+              {
+                label: 'Latest Posts',
+                to: '/blog',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/your-org/ros2-nervous-system-book',
+              },
+            ],
+          },
+          {
+            title: 'Resources',
+            items: [
+              {
+                label: 'Documentation',
+                to: '/docs/modules/vla-integration/introduction',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/your-org/ros2-nervous-system-book',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} ROS 2 Nervous System Book. Built with Docusaurus.`,
+      },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+      },
+    }),
+});

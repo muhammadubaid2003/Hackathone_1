@@ -1,0 +1,82 @@
+# API Contract: Documentation Access for RAG System
+
+## Purpose
+This API contract defines how the RAG (Retrieval-Augmented Generation) system will access the ROS 2 educational module content for question-answering capabilities.
+
+## Endpoints
+
+### GET /api/docs/modules/ros2-nervous-system
+**Description**: Retrieve the complete ROS 2 Nervous System module content
+**Authentication**: None required (public documentation)
+
+**Response**:
+```json
+{
+  "module": {
+    "id": "ros2-nervous-system",
+    "title": "ROS 2 Nervous System Module",
+    "description": "Introduction to ROS 2 as the core nervous system of humanoid robots",
+    "chapters": [
+      {
+        "id": "introduction",
+        "title": "Introduction to ROS 2 as a Robotic Nervous System",
+        "content": "Full markdown content of the chapter...",
+        "learning_objectives": ["Understand ROS 2 core concepts", "Identify nodes, topics, services, and messages"]
+      },
+      {
+        "id": "python-agents",
+        "title": "Controlling Robots with ROS 2 and Python Agents",
+        "content": "Full markdown content of the chapter...",
+        "learning_objectives": ["Build ROS 2 nodes with rclpy", "Connect AI logic to robot controllers"]
+      },
+      {
+        "id": "urdf-modeling",
+        "title": "Modeling the Humanoid Body with URDF",
+        "content": "Full markdown content of the chapter...",
+        "learning_objectives": ["Create URDF models", "Prepare robot models for simulation"]
+      }
+    ],
+    "target_audience": "AI and software engineering students transitioning into Physical AI and humanoid robotics"
+  }
+}
+```
+
+### GET /api/docs/modules/ros2-nervous-system/{chapterId}
+**Description**: Retrieve a specific chapter from the ROS 2 Nervous System module
+**Path Parameters**:
+- `chapterId`: The ID of the chapter to retrieve (introduction, python-agents, or urdf-modeling)
+
+**Response**:
+```json
+{
+  "chapter": {
+    "id": "chapterId",
+    "title": "Chapter title",
+    "content": "Full markdown content of the chapter...",
+    "learning_objectives": ["List of learning objectives"],
+    "module_id": "ros2-nervous-system"
+  }
+}
+```
+
+### GET /api/docs/search
+**Description**: Search across all documentation content
+**Query Parameters**:
+- `q`: Search query string
+- `module`: Optional filter for specific module (e.g., "ros2-nervous-system")
+
+**Response**:
+```json
+{
+  "results": [
+    {
+      "id": "unique-identifier",
+      "title": "Result title",
+      "content_snippet": "Relevant content snippet...",
+      "module": "module-id",
+      "chapter": "chapter-id",
+      "url": "relative-url-to-content"
+    }
+  ]
+}
+```
